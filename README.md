@@ -14,8 +14,13 @@
 有道
 =================
 有道接口通过观察有四个参数是动态的，sign,ts,salt,bv
+
 ts 参数是通过 r = “” + (new Date).getTime() 生成； 也就是获取了当前的时间戳
+
 bv参数是通过 t = n.md5(navigator.appVersion) 生成； 也就是 navigator.appVersion 的 MD5 加密
+
 salt参数是通过 i = r + parseInt(10 * Math.random(), 10) 生成 即在 r(就是ts)的基础上在最后一位随机加上一个整数
+
 sign参数是通过 md5(“fanyideskweb” + e + i + “@6f#X3=cCuncYssPsuRUE”)生成
+
 通过逆向js代码就可以破解。
